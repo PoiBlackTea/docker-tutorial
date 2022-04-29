@@ -10,7 +10,6 @@ pipeline {
         }
         stage('Build'){
             steps{
-                sh 'cd ~/jenkins'
                 sh 'docker-compose build'
                 sh 'docker-compose up'
             }
