@@ -3,19 +3,15 @@ pipeline {
     stages {
         stage('verify tooling'){
             steps{
-                sh '''
-                    docker version
-                    docker info
-                '''
+                sh 'docker version'
+                sh 'docker info'
             }
         }
         stage('Build'){
             steps{
-                sh '''
-                    cd ~/jenkins
-                    docker-compose build
-                    docker-compose up
-                '''
+                sh 'cd ~/jenkins'
+                sh 'docker-compose build'
+                sh 'docker-compose up'
             }
         }
         stage('Kill'){
